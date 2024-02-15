@@ -14,13 +14,17 @@ import logo from "../assets/logo.png";
     <meta name="generator" content={Astro.generator} />
     <title>Hampton Roads DevFest | May 31st, 2024 | Virginia Beach, VA</title>
     <link href="/dist/index.css" rel="stylesheet" />
+
+    <script src="https://js.tito.io/v2/with/inline" async></script>
   </head>
   <body
     class="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-900"
   >
     <div class="w-full max-w-2xl p-4">
       <Image src={logo} alt="Hampton Roads DevFest" class="mx-auto" />
-      <h1 class="mt-6 text-3xl font-bold text-center">Hampton Roads DevFest 2024</h1>
+      <h1 class="mt-6 text-3xl font-bold text-center">
+        Hampton Roads DevFest 2024
+      </h1>
       <p class="mt-2 text-xl text-center">
         May 31st, 2024 - Virginia Beach, VA
       </p>
@@ -48,12 +52,14 @@ import logo from "../assets/logo.png";
         </div>
       </section>
 
-      <section class="mt-12 flex flex-col md:flex-row justify-between">
-        <div class="flex-1">
-          <h2 class="text-2xl font-bold">Tickets</h2>
+	  <section class="mt-12">
+        <div class="flex flex-col md:flex-row justify-between">
+          <div class="flex-1">
+            <h2 class="text-2xl font-bold">Tickets</h2>
+          </div>
         </div>
-        <div class="flex-1">
-          <p>Tickets go on sale Feburary 19th, 2024.</p>
+        <div class="mt-4 rounded overflow-hidden shadow-lg">
+			<tito-widget event="revolutionva/hrdevfest2024"></tito-widget>
         </div>
       </section>
 
