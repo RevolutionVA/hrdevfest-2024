@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.png";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Hampton Roads DevFest | May 31st, 2024 | Virginia Beach, VA</title>
+    <link href="/dist/index.css" rel="stylesheet" />
+  </head>
+  <body
+    class="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-900"
+  >
+    <div class="w-full max-w-2xl p-4">
+      <Image src={logo} alt="Hampton Roads DevFest" class="mx-auto" />
+      <h1 class="mt-6 text-3xl font-bold text-center">Hampton Roads DevFest 2024</h1>
+      <p class="mt-2 text-xl text-center">
+        May 31st, 2024 - Virginia Beach, VA
+      </p>
+
+      <section class="mt-12">
+        <div class="flex flex-col md:flex-row justify-between">
+          <div class="flex-1">
+            <h2 class="text-2xl font-bold">Venue</h2>
+          </div>
+          <div class="flex-1">
+            <p class="mt-2 text-xl">Zeiders American Dream Theater</p>
+            <p class="mt-2 text-lg">4509 Commerce Street,</p>
+            <p class="mt-2 text-lg">Virginia Beach, VA 23462</p>
+          </div>
+        </div>
+        <div class="mt-4 rounded overflow-hidden shadow-lg">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d798.259579003214!2d-76.13574812406885!3d36.84155839379043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ba959f7490b19d%3A0x2946d6df48a4c3ba!2sZeiders%20American%20Dream%20Theater!5e0!3m2!1sen!2sus!4v1708011885150!5m2!1sen!2sus"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </section>
+
+      <section class="mt-12 flex flex-col md:flex-row justify-between">
+        <div class="flex-1">
+          <h2 class="text-2xl font-bold">Tickets</h2>
+        </div>
+        <div class="flex-1">
+          <p>Tickets go on sale Feburary 19th, 2024.</p>
+        </div>
+      </section>
+
+      <section class="mt-12 flex flex-col md:flex-row justify-between">
+        <div class="flex-1">
+          <h2 class="text-2xl font-bold">Speakers</h2>
+        </div>
+        <div class="flex-1">
+          <p>
+            Hampton Roads DevFest is special because it unique highlights the
+            amazing developer talent we have in our region. All HRDevFest
+            speakers are current or past residents of the Hampton Roads area.
+          </p>
+          <p class="mt-5">
+            Our <a
+              href="https://sessionize.com/hampton-roads-devfest-2024"
+              class="text-blue-500 hover:text-blue-700">Call For Speakers</a
+            > is currently open!
+          </p>
+        </div>
+      </section>
+
+      <section class="mt-12 flex flex-col md:flex-row justify-between">
+        <div class="flex-1">
+          <h2 class="text-2xl font-bold">Sponsors</h2>
+        </div>
+        <div class="flex-1">
+          <p>Our <a href="">Call For Sponsors</a> will open soon!</p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
