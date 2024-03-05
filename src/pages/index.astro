@@ -26,13 +26,18 @@ import cfsponsors from "../assets/sponsorship.png";
       window.addEventListener("scroll", function () {
         let scrollTop =
           window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
-          document.getElementById("topLinkBar").classList.remove("opacity-0");
-          document.getElementById("topLinkBar").classList.add("opacity-100");
-        } else {
-          document.getElementById("topLinkBar").classList.remove("opacity-100");
-          document.getElementById("topLinkBar").classList.add("opacity-0");
+        let topLinkBar = document.getElementById("topLinkBar");
+
+        if (topLinkBar) {
+          if (scrollTop > lastScrollTop) {
+            topLinkBar.classList.remove("opacity-0");
+            topLinkBar.classList.add("opacity-100");
+          } else {
+            topLinkBar.classList.remove("opacity-100");
+            topLinkBar.classList.add("opacity-0");
+          }
         }
+
         lastScrollTop = scrollTop;
       });
     </script>
@@ -41,13 +46,13 @@ import cfsponsors from "../assets/sponsorship.png";
       id="topLinkBar"
       class="fixed top-0 w-full bg-gray-800 text-white z-1000 opacity-0 transition-opacity duration-500"
     >
-    <nav class="flex justify-around p-4">
-      <a class="hover:text-blue-500" href="#about">About</a>
-      <a class="hover:text-blue-500" href="#venue">Venue</a>
-      <a class="hover:text-blue-500" href="#tickets">Tickets</a>
-      <a class="hover:text-blue-500" href="#speakers">Speakers</a>
-      <a class="hover:text-blue-500" href="#sponsors">Sponsors</a>
-    </nav>
+      <nav class="flex justify-around p-4">
+        <a class="hover:text-blue-500" href="#about">About</a>
+        <a class="hover:text-blue-500" href="#venue">Venue</a>
+        <a class="hover:text-blue-500" href="#tickets">Tickets</a>
+        <a class="hover:text-blue-500" href="#speakers">Speakers</a>
+        <a class="hover:text-blue-500" href="#sponsors">Sponsors</a>
+      </nav>
     </div>
     <div class="w-full max-w-2xl p-4">
       <Image src={logo} alt="Hampton Roads DevFest" class="mx-auto" />
