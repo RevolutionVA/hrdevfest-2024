@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/logo.png";
+import cfsponsors from "../assets/sponsorship.png";
 ---
 
 <html lang="en">
@@ -20,6 +21,34 @@ import logo from "../assets/logo.png";
   <body
     class="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-900"
   >
+    <script>
+      let lastScrollTop = 0;
+      window.addEventListener("scroll", function () {
+        let scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+          document.getElementById("topLinkBar").classList.remove("opacity-0");
+          document.getElementById("topLinkBar").classList.add("opacity-100");
+        } else {
+          document.getElementById("topLinkBar").classList.remove("opacity-100");
+          document.getElementById("topLinkBar").classList.add("opacity-0");
+        }
+        lastScrollTop = scrollTop;
+      });
+    </script>
+
+    <div
+      id="topLinkBar"
+      class="fixed top-0 w-full bg-gray-800 text-white z-1000 opacity-0 transition-opacity duration-500"
+    >
+    <nav class="flex justify-around p-4">
+      <a class="hover:text-blue-500" href="#about">About</a>
+      <a class="hover:text-blue-500" href="#venue">Venue</a>
+      <a class="hover:text-blue-500" href="#tickets">Tickets</a>
+      <a class="hover:text-blue-500" href="#speakers">Speakers</a>
+      <a class="hover:text-blue-500" href="#sponsors">Sponsors</a>
+    </nav>
+    </div>
     <div class="w-full max-w-2xl p-4">
       <Image src={logo} alt="Hampton Roads DevFest" class="mx-auto" />
       <h1 class="mt-6 text-3xl font-bold text-center">
@@ -32,7 +61,7 @@ import logo from "../assets/logo.png";
       <section class="mt-12">
         <div class="flex flex-col md:flex-row justify-between">
           <div class="flex-1">
-            <h2 class="text-2xl font-bold">About</h2>
+            <h2 class="text-2xl font-bold" id="about">About</h2>
           </div>
         </div>
         <div class="mt-4 rounded overflow-hidden text-sm">
@@ -75,7 +104,7 @@ import logo from "../assets/logo.png";
       <section class="mt-12">
         <div class="flex flex-col md:flex-row justify-between">
           <div class="flex-1">
-            <h2 class="text-2xl font-bold">Venue</h2>
+            <h2 class="text-2xl font-bold" id="venue">Venue</h2>
           </div>
           <div class="flex-1">
             <p class="mt-2 text-xl">Zeiders American Dream Theater</p>
@@ -98,7 +127,7 @@ import logo from "../assets/logo.png";
       <section class="mt-12">
         <div class="flex flex-col md:flex-row justify-between">
           <div class="flex-1">
-            <h2 class="text-2xl font-bold">Tickets</h2>
+            <h2 class="text-2xl font-bold" id="tickets">Tickets</h2>
           </div>
         </div>
         <div class="mt-4 rounded overflow-hidden shadow-lg">
@@ -108,7 +137,7 @@ import logo from "../assets/logo.png";
 
       <section class="mt-12 flex flex-col md:flex-row justify-between">
         <div class="flex-1">
-          <h2 class="text-2xl font-bold">Speakers</h2>
+          <h2 class="text-2xl font-bold" id="speakers">Speakers</h2>
         </div>
         <div class="flex-1">
           <p>
@@ -127,12 +156,31 @@ import logo from "../assets/logo.png";
 
       <section class="mt-12 flex flex-col md:flex-row justify-between">
         <div class="flex-1">
-          <h2 class="text-2xl font-bold">Sponsors</h2>
+          <h2 class="text-2xl font-bold" id="sponsors">Sponsors</h2>
         </div>
         <div class="flex-1">
-          <p>Our <a href="">Call For Sponsors</a> will open soon!</p>
+          <p>
+            Our <a
+              href="https://drive.google.com/file/u/5/d/1Pt1AwixVbP1C9HceFoaE28HB6f2MbH3P/view?usp=drive_link"
+              class="text-blue-500 hover:text-blue-700">Call For Sponsors</a
+            > is open!
+          </p>
+          <br />
+          <a
+            href="https://drive.google.com/file/u/5/d/1Pt1AwixVbP1C9HceFoaE28HB6f2MbH3P/view?usp=drive_link"
+          >
+            <Image src={cfsponsors} alt="Call For Sponsors" />
+          </a>
         </div>
       </section>
     </div>
+    <footer
+      class="fixed inset-x-0 bottom-0 bg-gray-800 text-white text-center py-3"
+    >
+      <p>
+        Hampton Roads DevFest is presented by RevolutionVA, a 501c3
+        organization.
+      </p>
+    </footer>
   </body>
 </html>
