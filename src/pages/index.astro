@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import logo from "../assets/logo.png";
 import headerImage from "../assets/header-image.png";
 import cfsponsors from "../assets/sponsorship.png";
+
+import logoMarathon from "../assets/sponsors/marathon.png";
 ---
 
 <html lang="en">
@@ -45,7 +47,7 @@ import cfsponsors from "../assets/sponsorship.png";
 
     <div
       id="topLinkBar"
-      class="fixed top-0 w-full bg-gray-800 text-white z-1000 opacity-0 transition-opacity duration-500"
+      class="fixed top-0 w-full bg-gray-800 text-white z-50 opacity-0 transition-opacity duration-500"
     >
       <nav class="flex justify-around p-4">
         <a class="hover:text-blue-500" href="#about">About</a>
@@ -171,6 +173,11 @@ import cfsponsors from "../assets/sponsorship.png";
           <h2 class="text-2xl font-bold" id="sponsors">Sponsors</h2>
         </div>
         <div class="flex-1">
+          <p class="mb-5">Thank you so much to our sponsors!</p>
+          <a href="https://marathonus.com" target="_blank">
+            <Image src={logoMarathon} alt="Marathon Consulting" />
+          </a>
+          <hr class="border-t border-gray-500 my-4 mx" />
           <p>
             Our <a
               href="https://drive.google.com/file/u/5/d/1Pt1AwixVbP1C9HceFoaE28HB6f2MbH3P/view?usp=drive_link"
